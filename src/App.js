@@ -11,15 +11,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div>
-          <Header />
-          <Switch>
-            <Route path={["/", "/categories"]} exact component={CategoriesList} />
-            <Route path='/categories/new' exact component={EditCategory} />
-            <Route path='/categories/edit' exact component={EditCategory} />
-          </Switch>
-
-        </div>
+        <Header />
+        <Switch>
+          <Route path={["/", "/categories"]} exact component={CategoriesList} />
+          <Route path='/categories/new' exact component={EditCategory} />
+          <Route path='/categories/edit' exact component={EditCategory} />
+        </Switch>
       </Router>
     </div>
   );

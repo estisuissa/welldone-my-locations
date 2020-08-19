@@ -43,7 +43,7 @@ function EditCategory(props) {
         <div className='edit-form' >
             <TextField required id="outlined-basic" error={!!error} label="Category Name" helperText={error || ''} variant="outlined" defaultValue={category.name} onChange={handleNameChange} />
             <div className='edit-buttons'>
-                <Button variant="contained" color="primary" onClick={handleSave}>Save</Button>
+                <Button variant="contained" color="secondary" onClick={handleSave}>Save</Button>
                 <Button variant="contained" onClick={handleCancle}>Cancle</Button>
             </div>
 

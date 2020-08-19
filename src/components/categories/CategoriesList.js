@@ -5,9 +5,11 @@ import { selectCategory } from '../../redux/actions/categories';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import EmptyList from './EmptyList'
+
 
 function CategoriesList() {
-    
+
     const categories = useSelector(state => state.categories.allCategories)
     const selectedCategory = useSelector(state => state.categories.selectedCategory);
     const dispatch = useDispatch();
@@ -16,8 +18,12 @@ function CategoriesList() {
         dispatch(selectCategory(category))
     };
 
-    return (
-        <div className="categories-list">
+    const renderEmpty = () => {
+        return (<EmptyList />)
+    }
+
+    const renderList = () => {
+        return (
             <List component="nav">
                 {
                     categories.map(({ id, name }) =>
@@ -32,8 +38,10 @@ function CategoriesList() {
                     )
                 }
             </List>
-        </div>
-    );
+        )
+    }
+
+    return categories.length > 0 ? renderList() : renderEmpty()
 }
 
 export default CategoriesList;

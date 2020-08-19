@@ -7,7 +7,7 @@ function Actions({ actions }) {
     return (
         <div className='actions'>
             {
-                actions.map(({ name, fn }) => <Button className='action-btn' key={name} onClick={fn}>{name}</Button>)
+                actions.map(({ name, fn }) => <Button color='default' variant='outlined' key={name} onClick={fn}>{name}</Button>)
             }
         </div>
     )

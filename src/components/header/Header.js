@@ -9,7 +9,6 @@ import Actions from './Actions'
 
 import { deleteCategory } from '../../redux/actions/categories';
 
-import './Header.css';
 function Header() {
 
     const selectedCategory = useSelector(state => state.categories.selectedCategory);
@@ -47,16 +46,14 @@ function Header() {
 
         return 'Categories'
     }
-    
+
     return (
-        <div className='header'>
-            <AppBar position="static">
-                <Toolbar>
-                    <Title title={getTitle()} />
-                    <Actions className='header-actions' actions={getActions()} />
-                </Toolbar>
-            </AppBar>
-        </div>
+        <AppBar position="static" color='secondary'>
+            <Toolbar>
+                <Title title={getTitle()} />
+                <Actions actions={getActions()} />
+            </Toolbar>
+        </AppBar>
 
     )
 }
